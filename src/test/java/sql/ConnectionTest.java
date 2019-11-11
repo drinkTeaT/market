@@ -17,13 +17,14 @@ public class ConnectionTest {
             System.out.println(connection.isClosed());
         } catch (SQLException e) {
             e.printStackTrace();
-        }finally {
-if (connection != null){
-    try {
-        connection.close();
-    } catch (SQLException e) {
-        e.printStackTrace();
-    }
-}       }
+        } finally {
+            if (connection != null) {
+                try {
+                    connection.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
     }
 }

@@ -2,9 +2,6 @@ package com.tacbin.sql.operation.impl;
 
 import com.tacbin.sql.operation.SqlOperation;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -67,25 +64,6 @@ public class ExportDataUsingInsert extends SqlOperation {
                 writeIntoFile(insertSqls);
             }
         } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-
-    private void writeIntoFile(List<String> sqls) {
-        FileWriter writer = null;
-        BufferedWriter bw = null;
-        try {
-            writer = new FileWriter(outputPath, true);
-            bw = new BufferedWriter(writer);
-            for (int i = 0; i < sqls.size(); i++) {
-                System.out.println("写入-- " + sqls.get(i).toString());
-                bw.append(sqls.get(i).toString()+"\n");
-            }
-            writer.flush();
-            bw.flush();
-            writer.close();
-            bw.close();
-        } catch (IOException e) {
             e.printStackTrace();
         }
     }

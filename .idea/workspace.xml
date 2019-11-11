@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="568860e0-4b3e-4239-9f52-58122f126877" name="Default Changelist" comment="" />
+    <list default="true" id="568860e0-4b3e-4239-9f52-58122f126877" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tacbin/sql/operation/SqlOperation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tacbin/sql/operation/SqlOperation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tacbin/sql/operation/impl/ExportDataUsingInsert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tacbin/sql/operation/impl/ExportDataUsingInsert.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sql/ConnectionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sql/ConnectionTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tacbin/sql/operation/impl/Launcher.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/sql/ConnectionTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/sql/ConnectionTest.class" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +24,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
       <MavenImportingSettings>
@@ -24,7 +35,9 @@
     </option>
   </component>
   <component name="ProjectId" id="1TS6Z9nT0Uu71PLegP6EN3G0zic" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../java/lls-ams" />
@@ -71,11 +84,11 @@
       </method>
     </configuration>
     <configuration name="Launcher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.tacbin.sql.operation.impl.Launcher" />
+      <option name="MAIN_CLASS_NAME" value="com.tacbin.sql.operation.Launcher" />
       <module name="market" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.tacbin.sql.operation.impl.*" />
+          <option name="PATTERN" value="com.tacbin.sql.operation.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -86,8 +99,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Launcher" />
-        <item itemvalue="Application.ExportDataUsingInsertTest" />
         <item itemvalue="Application.ConnectionTest" />
+        <item itemvalue="Application.ExportDataUsingInsertTest" />
       </list>
     </recent_temporary>
   </component>
@@ -101,27 +114,34 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1573441202700</updated>
-      <workItem from="1573441208597" duration="10789000" />
+      <workItem from="1573441208597" duration="16242000" />
     </task>
+    <task id="LOCAL-00001" summary="迁移文件">
+      <created>1573465586263</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1573465586263</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/tacbin/sql/operation/impl/ExportDataUsingInsert.java</url>
-          <line>66</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/tacbin/sql/operation/impl/ExportDataUsingInsert.java</url>
-          <line>75</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="迁移文件" />
+    <option name="LAST_COMMIT_MESSAGE" value="迁移文件" />
   </component>
 </project>
