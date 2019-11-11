@@ -15,12 +15,12 @@ public class DataBaseConnection {
 
     // MySQL 8.0 以上版本 - JDBC 驱动名及数据库 URL
     static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
-    static final String DB_URL = "jdbc:mysql://localhost:3306/springboot?useSSL=false&serverTimezone=UTC";
+    static final String DB_URL = "jdbc:mysql://172.16.90.234:3306/mysql?useSSL=false&serverTimezone=UTC";
 
 
     // 数据库的用户名与密码，需要根据自己的设置
     static final String USER = "root";
-    static final String PASS = "liuwb123";
+    static final String PASS = "123456";
     private static ThreadLocal<Connection> threadLocal = ThreadLocal.withInitial(() -> {
         Connection conn = null;
         try {
