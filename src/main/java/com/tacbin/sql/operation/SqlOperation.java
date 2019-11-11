@@ -29,7 +29,7 @@ public abstract class SqlOperation {
     }
 
 
-    public abstract Object doOperate();
+    public abstract void doOperate();
 
     protected List<String> queryTableFields() {
         // 获取表中字段

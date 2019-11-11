@@ -20,12 +20,11 @@ public class ExportDataUsingInsert extends SqlOperation {
     }
 
     @Override
-    public Object doOperate() {
+    public void doOperate() {
         // 获取表的字段
         List<String> fields = queryTableFields();
         // 分页查询
         page(fields);
-        return null;
     }
 
     private void page(List<String> fields) {
