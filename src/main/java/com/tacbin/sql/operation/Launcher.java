@@ -9,7 +9,7 @@ import com.tacbin.sql.operation.impl.ExportDataUsingInsert;
  **/
 public class Launcher {
     public static void main(String[] args) {
-        SqlOperation operation = new ExportDataUsingInsert("t_sms_template","E://insert.sql");
+        SqlOperation operation = new ExportDataUsingInsert("t_sms_template", "E://insert.sql");
         operation.doOperate();
     }
 }
