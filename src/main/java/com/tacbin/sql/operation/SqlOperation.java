@@ -56,7 +56,6 @@ public abstract class SqlOperation {
             writer = new FileWriter(outputPath, true);
             bw = new BufferedWriter(writer);
             for (int i = 0; i < sqls.size(); i++) {
-                System.out.println("写入-- " + sqls.get(i).toString());
                 bw.append(sqls.get(i).toString() + "\n");
             }
             writer.flush();

@@ -28,6 +28,7 @@ public class ExportDataUsingInsert extends SqlOperation {
     }
 
     private void page(List<String> fields) {
+        int writeAmount = 0;
         List<String> insertSqls = new ArrayList<>();
         try {
             // 总数
@@ -43,7 +44,7 @@ public class ExportDataUsingInsert extends SqlOperation {
             for (int i = 0; i < times; i++) {
                 insertSqls.clear();
                 String field = fields.stream().collect(Collectors.joining(","));
-                pageSql = "SELECT " + field + " FROM " + tableName + " LIMIT " + i * initial + "," + ((i + 1) * initial - 1) + ";";
+                pageSql = "SELECT " + field + " FROM " + tableName + " order by " + fields.get(0) + " LIMIT " + (i * initial) + "," + initial + ";";
                 fieldsStatement = conn.prepareStatement(pageSql);
                 result = fieldsStatement.executeQuery();
                 while (result.next()) {
@@ -59,11 +60,13 @@ public class ExportDataUsingInsert extends SqlOperation {
                     }
                     sql = sql + "(" + value + ");";
                     insertSqls.add(sql.trim());
+                    writeAmount++;
                 }
                 writeIntoFile(insertSqls);
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        System.out.println("写入总条数有" + writeAmount + "条");
     }
 }
