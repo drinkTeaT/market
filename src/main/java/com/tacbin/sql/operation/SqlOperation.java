@@ -10,6 +10,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -31,7 +32,7 @@ public abstract class SqlOperation {
 
     public abstract void doOperate();
 
-    protected List<String> queryTableFields() {
+    protected List<String> queryTableFields(HashMap<String, String> excludeFieldsMap) {
         // 获取表中字段
         List<String> fields = new ArrayList<>();
         try {
@@ -41,6 +42,9 @@ public abstract class SqlOperation {
             int i = 1;
             while (result.next()) {
                 String fieldName = result.getString(i);
+                if (excludeFieldsMap.containsKey(fieldName)) {
+                    continue;
+                }
                 fields.add(fieldName);
             }
         } catch (SQLException e) {

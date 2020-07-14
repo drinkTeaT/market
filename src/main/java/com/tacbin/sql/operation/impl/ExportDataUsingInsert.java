@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -15,14 +16,20 @@ import java.util.stream.Collectors;
  * Date 2019/11/11 11:26
  **/
 public class ExportDataUsingInsert extends SqlOperation {
-    public ExportDataUsingInsert(String tableName, String outputPath) {
+    private String conditionSql;
+    private HashMap<String, String> excludeFieldsMap;
+
+    public ExportDataUsingInsert(String tableName, String outputPath, String conditionSql, List<String> excludeFieldsList) {
         super(tableName, outputPath);
+        this.conditionSql = " " + conditionSql + " ";
+        this.excludeFieldsMap = new HashMap<>();
+        excludeFieldsList.forEach(x -> excludeFieldsMap.put(x, ""));
     }
 
     @Override
     public void doOperate() {
         // 获取表的字段
-        List<String> fields = queryTableFields();
+        List<String> fields = queryTableFields(excludeFieldsMap);
         // 分页查询
         page(fields);
     }
@@ -44,7 +51,7 @@ public class ExportDataUsingInsert extends SqlOperation {
             for (int i = 0; i < times; i++) {
                 insertSqls.clear();
                 String field = fields.stream().collect(Collectors.joining(","));
-                pageSql = "SELECT " + field + " FROM " + tableName + " order by " + fields.get(0) + " LIMIT " + (i * initial) + "," + initial + ";";
+                pageSql = "SELECT " + field + " FROM " + tableName + conditionSql + " order by " + fields.get(0) + " LIMIT " + (i * initial) + "," + initial + ";";
                 fieldsStatement = conn.prepareStatement(pageSql);
                 result = fieldsStatement.executeQuery();
                 while (result.next()) {
