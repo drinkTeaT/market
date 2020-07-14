@@ -6,7 +6,7 @@ import java.sql.DriverManager;
 /**
  * Description 连接mysql
  * Author liuweibin
- * Date 2019/11/11 11:07
+ * Date 2020/07/14
  **/
 public class DataBaseConnection {
     // MySQL 8.0 以下版本 - JDBC 驱动名及数据库 URL
@@ -15,12 +15,12 @@ public class DataBaseConnection {
 
     // MySQL 8.0 以上版本 - JDBC 驱动名及数据库 URL
     static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
-    static final String DB_URL = "";
+    static final String DB_URL = "jdbc:mysql://rm-wz96378h5d05nb6f6.mysql.rds.aliyuncs.com:3306/ttai?autoReconnect=true&tinyInt1isBit=false&useUnicode=true&useSSL=true";
 
 
     // 数据库的用户名与密码，需要根据自己的设置
-    static final String USER = "";
-    static final String PASS = "";
+    static final String USER = "develop";
+    static final String PASS = "U2@amhtEs6YhU6";
     private static ThreadLocal<Connection> threadLocal = ThreadLocal.withInitial(() -> {
         Connection conn = null;
         try {

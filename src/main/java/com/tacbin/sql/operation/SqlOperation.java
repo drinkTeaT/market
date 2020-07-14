@@ -16,7 +16,7 @@ import java.util.List;
 /**
  * Description sql操作
  * Author liuweibin
- * Date 2019/11/11 11:04
+ * Date 2020/07/14
  **/
 public abstract class SqlOperation {
     protected Connection conn;
@@ -53,19 +53,14 @@ public abstract class SqlOperation {
         return fields;
     }
 
-    protected void writeIntoFile(List<String> sqls) {
-        FileWriter writer = null;
-        BufferedWriter bw = null;
-        try {
-            writer = new FileWriter(outputPath, true);
-            bw = new BufferedWriter(writer);
+    protected final void writeIntoFile(List<String> sqls) {
+        try (FileWriter writer = new FileWriter(outputPath, true);
+             BufferedWriter bw = new BufferedWriter(writer)) {
             for (int i = 0; i < sqls.size(); i++) {
-                bw.append(sqls.get(i).toString() + "\n");
+                bw.append(sqls.get(i) + "\n");
             }
             writer.flush();
             bw.flush();
-            writer.close();
-            bw.close();
         } catch (IOException e) {
             e.printStackTrace();
         }

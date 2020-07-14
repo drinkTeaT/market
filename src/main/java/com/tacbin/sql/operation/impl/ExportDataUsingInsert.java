@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 /**
  * Description 生成insert的sql脚本，导出表中数据
  * Author liuweibin
- * Date 2019/11/11 11:26
+ * Date 2020/07/14
  **/
 public class ExportDataUsingInsert extends SqlOperation {
     private String conditionSql;
@@ -74,6 +74,6 @@ public class ExportDataUsingInsert extends SqlOperation {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        System.out.println("写入总条数有" + writeAmount + "条");
+        System.out.println(tableName + " 写入总条数有" + writeAmount + "条");
     }
 }

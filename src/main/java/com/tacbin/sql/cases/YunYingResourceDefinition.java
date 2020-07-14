@@ -5,7 +5,10 @@ import com.tacbin.sql.operation.impl.ExportDataUsingInsert;
 
 import java.util.Arrays;
 
-public class YunYingResourceDefinition extends AbstractCase{
+/**
+ * 导出运营资源位sql
+ */
+public class YunYingResourceDefinition extends AbstractCase {
     private int pid;
 
     public YunYingResourceDefinition(int pid) {

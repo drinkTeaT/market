@@ -6,11 +6,12 @@ import com.tacbin.sql.cases.YunYingResourceDefinition;
 /**
  * Description
  * Author liuweibin
- * Date 2019/11/11 16:08
+ * Date 2020/07/14
  **/
 public class Launcher {
     public static void main(String[] args) {
-        AbstractCase abstractCase = new YunYingResourceDefinition(465);
+        int pid = 464;
+        AbstractCase abstractCase = new YunYingResourceDefinition(pid);
         abstractCase.doOperation();
     }
 }
