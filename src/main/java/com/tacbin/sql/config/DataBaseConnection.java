@@ -1,4 +1,4 @@
-package com.tacbin.sql;
+package com.tacbin.sql.config;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

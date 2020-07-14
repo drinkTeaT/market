@@ -1,6 +1,6 @@
 package com.tacbin.sql.operation;
 
-import com.tacbin.sql.DataBaseConnection;
+import com.tacbin.sql.config.DataBaseConnection;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;

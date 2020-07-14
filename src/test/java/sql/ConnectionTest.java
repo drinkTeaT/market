@@ -1,6 +1,6 @@
 package sql;
 
-import com.tacbin.sql.DataBaseConnection;
+import com.tacbin.sql.config.DataBaseConnection;
 
 import java.sql.Connection;
 import java.sql.SQLException;

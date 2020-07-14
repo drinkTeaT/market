@@ -1,18 +1,19 @@
-package com.tacbin.sql.operation;
+package com.tacbin.sql.cases;
 
+import com.tacbin.sql.operation.SqlOperation;
 import com.tacbin.sql.operation.impl.ExportDataUsingInsert;
 
 import java.util.Arrays;
-import java.util.HashMap;
 
-/**
- * Description
- * Author liuweibin
- * Date 2019/11/11 16:08
- **/
-public class Launcher {
-    public static void main(String[] args) {
-        int pid = 465;
+public class YunYingResourceDefinition extends AbstractCase{
+    private int pid;
+
+    public YunYingResourceDefinition(int pid) {
+        this.pid = pid;
+    }
+
+    @Override
+    public void doOperation() {
         SqlOperation operation = new ExportDataUsingInsert("mait_resource_definition", "E://insert.sql", "where id = " + pid, Arrays.asList());
         operation.doOperate();
 
