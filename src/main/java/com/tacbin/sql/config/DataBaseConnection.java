@@ -6,7 +6,6 @@ import java.sql.DriverManager;
 /**
  * Description 连接mysql
  * Author liuweibin
- * Date 2020/07/14
  **/
 public class DataBaseConnection {
     // MySQL 8.0 以下版本 - JDBC 驱动名及数据库 URL

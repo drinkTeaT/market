@@ -13,7 +13,6 @@ import java.util.stream.Collectors;
 /**
  * Description 生成insert的sql脚本，导出表中数据
  * Author liuweibin
- * Date 2020/07/14
  **/
 public class ExportDataUsingInsert extends SqlOperation {
     private String conditionSql;

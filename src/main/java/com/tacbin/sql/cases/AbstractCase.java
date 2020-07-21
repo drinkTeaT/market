@@ -1,7 +1,8 @@
 package com.tacbin.sql.cases;
 
 /**
- * 抽象案例
+ * Description 抽象案例
+ * Author liuweibin
  */
 public abstract class AbstractCase {
     public abstract void doOperation();

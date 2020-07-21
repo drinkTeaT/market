@@ -16,7 +16,6 @@ import java.util.List;
 /**
  * Description sql操作
  * Author liuweibin
- * Date 2020/07/14
  **/
 public abstract class SqlOperation {
     protected Connection conn;
