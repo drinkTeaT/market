@@ -12,6 +12,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Description sql操作
@@ -21,11 +22,15 @@ public abstract class SqlOperation {
     protected Connection conn;
     protected String tableName;
     protected String outputPath;
+    protected Map<String, String> fieldCommentMap;
+    protected HashMap<String, String> excludeFieldsMap;
 
     public SqlOperation(String tableName, String outputPath) {
-        conn = DataBaseConnection.getConnection();
+        this.conn = DataBaseConnection.getConnection();
         this.tableName = tableName;
         this.outputPath = outputPath;
+        this.fieldCommentMap = new HashMap<>();
+        this.excludeFieldsMap = new HashMap<>();
     }
 
 
@@ -35,12 +40,13 @@ public abstract class SqlOperation {
         // 获取表中字段
         List<String> fields = new ArrayList<>();
         try {
-            String fieldSql = "select COLUMN_NAME from information_schema.COLUMNS  where TABLE_NAME= '" + tableName + "'";
+            String fieldSql = "select COLUMN_NAME,COLUMN_COMMENT from information_schema.COLUMNS  where TABLE_NAME= '" + tableName + "'";
             PreparedStatement fieldsStatement = conn.prepareStatement(fieldSql);
             ResultSet result = fieldsStatement.executeQuery();
             int i = 1;
             while (result.next()) {
-                String fieldName = result.getString(i);
+                String fieldName = result.getString("COLUMN_NAME");
+                fieldCommentMap.put(fieldName, result.getString("COLUMN_COMMENT"));
                 if (excludeFieldsMap.containsKey(fieldName)) {
                     continue;
                 }

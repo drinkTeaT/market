@@ -16,12 +16,10 @@ import java.util.stream.Collectors;
  **/
 public class ExportDataUsingInsert extends SqlOperation {
     private String conditionSql;
-    private HashMap<String, String> excludeFieldsMap;
 
     public ExportDataUsingInsert(String tableName, String outputPath, String conditionSql, List<String> excludeFieldsList) {
         super(tableName, outputPath);
         this.conditionSql = " " + conditionSql + " ";
-        this.excludeFieldsMap = new HashMap<>();
         excludeFieldsList.forEach(x -> excludeFieldsMap.put(x, ""));
     }
 
